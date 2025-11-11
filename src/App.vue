@@ -1,11 +1,14 @@
 <!-- Javascript -->
 <script setup lang="ts">
 import AppHeader from './components/AppHeader.vue'
+import Task from './components/Task.vue'
 </script>
 
 <!-- HTML -->
 <template>
   <AppHeader />
+  <Task :isChecked="true"> True Komponen Task </Task>
+  <Task :isChecked="false"> False Komponen Task </Task>
 </template>
 
 <!-- CSS -->
