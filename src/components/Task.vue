@@ -8,19 +8,24 @@
   </label>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 // options api
-import { defineComponent } from 'vue'
+// import { defineComponent } from 'vue'
 
-export default defineComponent({
-  name: 'TaskComponent',
-  props: {
-    isChecked: {
-      type: Boolean,
-      default: false,
-    },
-  },
-})
+// export default defineComponent({
+//   name: 'TaskComponent',
+//   props: {
+//     isChecked: {
+//       type: Boolean,
+//       default: false,
+//     },
+//   },
+// })
+
+// composition api
+defineProps<{
+  isChecked?: boolean | false
+}>()
 </script>
 
 <style scoped>
