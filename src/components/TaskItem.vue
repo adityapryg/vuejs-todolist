@@ -1,20 +1,19 @@
 <template>
   <label
-    class="group flex items-center p-4 px-6 my-3 bg-white rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.06)] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] cursor-pointer relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.1)] before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-[#667eea] before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100"
+    class="group flex items-center p-4 px-5 bg-white rounded-xl shadow-sm transition-all duration-200 cursor-pointer hover:shadow-md"
   >
-    <input type="checkbox" :checked="isChecked" class="hidden" />
-    <!-- We can put any element to this slot -->
+    <input type="checkbox" :checked="isChecked" @change="emit('update')" class="hidden" />
     <span
-      class="w-[22px] h-[22px] border-2 rounded-md mr-4 relative transition-all duration-200 shrink-0 flex items-center justify-center"
+      class="size-5 border-2 rounded-md me-3 relative transition-all duration-200 shrink-0 flex items-center justify-center"
       :class="
         isChecked
-          ? 'bg-[#667eea] border-[#667eea] after:content-[\'✓\'] after:text-white after:text-sm after:font-bold'
-          : 'border-[#ddd] group-hover:border-[#667eea]'
+          ? 'bg-indigo-500 border-indigo-500 after:content-[\'\u2713\'] after:text-white after:text-xs after:font-bold'
+          : 'border-gray-300 group-hover:border-indigo-400'
       "
     ></span>
     <span
-      class="flex-1 text-left text-base transition-all duration-300 mr-4"
-      :class="isChecked ? 'line-through text-[#a0aec0]' : 'text-[#2d3748]'"
+      class="flex-1 text-start text-base transition-all duration-200"
+      :class="isChecked ? 'line-through text-gray-400' : 'text-gray-700'"
     >
       <slot></slot>
     </span>
@@ -39,4 +38,6 @@
 defineProps<{
   isChecked?: boolean | false
 }>()
+
+const emit = defineEmits(['update'])
 </script>
