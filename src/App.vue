@@ -1,11 +1,7 @@
 <!-- Javascript -->
-<script setup lang="ts">
-import AppHeader from './components/AppHeader.vue'
-import ListItem from './components/ListItem.vue'
-</script>
+<script setup lang="ts"></script>
 
 <!-- HTML -->
 <template>
-  <AppHeader />
-  <ListItem />
+  <RouterView />
 </template>

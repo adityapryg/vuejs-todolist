@@ -10,20 +10,13 @@
       class="flex-1 py-3.5px-5 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 transition-all duration-300"
       maxlength="100"
     />
-    <button
-      type="submit"
-      class="flex items-center gap-2 py-3.5 px-6 bg-linear-to-br from-purple-500 to-purple-700 text-white rounded-xl font-semibold shadow-md hover:shadow-lg disabled:opacity-50 transition-all duration-300"
-      :style="{ fontWeight: 300, color: 'darkblue' }"
-      :disabled="!newTodo.trim()"
-    >
-      <span class="text-xl font-bold">+</span>
-      Add Todo
-    </button>
+    <ButtonSubmit />
   </form>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import ButtonSubmit from './shared/ButtonSubmit.vue'
 
 const newTodo = ref('')
 const emit = defineEmits<{
